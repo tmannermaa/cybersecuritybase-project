@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Confirm delete</title>
+    </head>
+
+    <body>
+        <h1>Are you sure that you want to delete following signup</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+
+            <tr>
+                <td th:text="${signup.name}">Name</td>
+                <td th:text="${signup.address}">Address</td>
+            </tr>
+            
+        </table>
+   
+        <form action="#" th:action="@{'/remove/' + ${signup.id}}" method="POST">
+            <p><input type="submit" value="Delete signup" /></p>
+        </form>
+        
+        <a href ="/form">Cancel</a>
+    </body>
+</html>
