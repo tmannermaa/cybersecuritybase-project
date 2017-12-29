@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>See all the signups for the event</title>
+    </head>
+
+    <body>
+        
+        <h1>All signups</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Id</th>
+                </tr>
+            </thead>
+
+            <tr th:each="signup : ${signups}">
+                <td th:utext="${signup.name}">Name</td>
+                <td th:utext="${signup.address}">Address</td>
+                <td th:utext="${signup.id}">Id</td>
+              
+            </tr>
+            
+        </table>
+        
+    </body>
+</html>
